@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>小任务清单</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <section class="panel" aria-labelledby="app-title">
+        <div class="header">
+          <div>
+            <p class="eyebrow">Today</p>
+            <h1 id="app-title">小任务清单</h1>
+          </div>
+          <div class="counter" aria-live="polite">
+            <span id="remaining-count">0</span>
+            <span>待完成</span>
+          </div>
+        </div>
+
+        <form id="task-form" class="task-form">
+          <label class="sr-only" for="task-input">输入新任务</label>
+          <input
+            id="task-input"
+            type="text"
+            placeholder="写下一个小目标..."
+            autocomplete="off"
+            maxlength="60"
+          />
+          <button type="submit">添加</button>
+        </form>
+
+        <div class="filters" aria-label="任务筛选">
+          <button class="filter is-active" type="button" data-filter="all">全部</button>
+          <button class="filter" type="button" data-filter="active">进行中</button>
+          <button class="filter" type="button" data-filter="done">已完成</button>
+        </div>
+
+        <ul id="task-list" class="task-list" aria-label="任务列表"></ul>
+
+        <p id="empty-state" class="empty-state">还没有任务。先加一个简单的开始吧。</p>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
